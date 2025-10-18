@@ -10,7 +10,7 @@
                 <field name='partner_tags' 
                     widget="many2many_tags"
                     options="{'color_field': 'color'}"
-                    attrs="{'invisible': [('has_partner_tags', '=', False)]}"/>
+                    invisible="not has_partner_tags"/>
             </xpath>
         </field>
     </record>

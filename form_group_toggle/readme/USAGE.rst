@@ -9,16 +9,16 @@ Any group with a ``string`` attribute will automatically have collapse/expand fu
 Screenshots
 -----------
 
-Groups in expanded state:
+Groups in opened state:
 
-.. image:: ../static/description/expanded.png
-   :alt: Groups expanded
+.. image:: ../static/description/opened.png
+   :alt: Groups opened
    :width: 600px
 
-Groups in collapsed state:
+Groups in closed state:
 
-.. image:: ../static/description/collapsed.png
-   :alt: Groups collapsed
+.. image:: ../static/description/closed.png
+   :alt: Groups closed
    :width: 600px
 
 Example

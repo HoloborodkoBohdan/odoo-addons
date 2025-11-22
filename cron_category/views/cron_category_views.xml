@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cron_category_view_list" model="ir.ui.view">
+        <field name="name">ir.cron.category.view.list</field>
+        <field name="model">ir.cron.category</field>
+        <field name="arch" type="xml">
+            <list string="Scheduled Actions Categories">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="cron_category_view_form" model="ir.ui.view">
+        <field name="name">ir.cron.category.view.form</field>
+        <field name="model">ir.cron.category</field>
+        <field name="arch" type="xml">
+            <form string="Scheduled Actions Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cron_category_view_search" model="ir.ui.view">
+        <field name="name">ir.cron.category.view.search</field>
+        <field name="model">ir.cron.category</field>
+        <field name="arch" type="xml">
+            <search string="Scheduled Actions Categories">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="cron_category_action" model="ir.actions.act_window">
+        <field name="name">Scheduled Actions Categories</field>
+        <field name="res_model">ir.cron.category</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Scheduled Actions Category
+            </p>
+            <p>
+                Organize your scheduled actions by creating categories.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="cron_category_menu"
+        name="Scheduled Actions Categories"
+        parent="base.menu_automation"
+        action="cron_category_action"
+        sequence="10"
+    />
+</odoo>

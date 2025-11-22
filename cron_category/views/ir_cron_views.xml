@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_view_form" model="ir.ui.view">
+        <field name="name">ir.cron.view.form.inherit.category</field>
+        <field name="model">ir.cron</field>
+        <field name="inherit_id" ref="base.ir_cron_view_form"/>
+        <field name="arch" type="xml">
+            <field name="model_id" position="after">
+                <field name="category_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="ir_cron_view_list" model="ir.ui.view">
+        <field name="name">ir.cron.view.list.inherit.category</field>
+        <field name="model">ir.cron</field>
+        <field name="inherit_id" ref="base.ir_cron_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="model_id" position="after">
+                <field name="category_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="ir_cron_view_search" model="ir.ui.view">
+        <field name="name">ir.cron.view.search.inherit.category</field>
+        <field name="model">ir.cron</field>
+        <field name="inherit_id" ref="base.ir_cron_view_search"/>
+        <field name="arch" type="xml">
+            <search position="inside">
+                <filter name="group_category" string="Category" context="{'group_by': 'category_id'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

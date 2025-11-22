@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="web.Form.OuterGroup" t-inherit="web.Form.OuterGroup" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_group')]" position="attributes">
+            <attribute name="t-att-data-collapsed">props.collapsed</attribute>
+        </xpath>
+        <!-- Replace title slot to add icon inline -->
+        <xpath expr="//t[@t-slot='title']" position="replace">
+            <div t-if="props.slots and props.slots.title" class="o_group_toggle_header">
+                <i class="o_group_toggle_icon fa fa-chevron-down"></i>
+                <div class="o_group_toggle_title">
+                    <t t-slot="title" />
+                </div>
+            </div>
+        </xpath>
+        <!-- Wrap slot items in collapsible div -->
+        <xpath expr="//t[@t-foreach='getItems()']" position="replace">
+            <div class="o_group_toggle_content">
+                <t t-foreach="getItems()" t-as="item" t-key="item_index">
+                    <span class="o_newline" t-if="item.newline" />
+                    <t t-slot="{{ item.name }}" className="item.colspan !== props.maxCols ? 'col-lg-' + item.size : ''"/>
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="web.Form.InnerGroup" t-inherit="web.Form.InnerGroup" t-inherit-mode="extension">
+        <!-- Replace the title div to add icon inline -->
+        <xpath expr="//div[@t-if='props.slots and props.slots.title']" position="replace">
+            <div t-if="props.slots and props.slots.title" t-attf-class="g-col-sm-{{ props.maxCols }} o_group_toggle_header">
+                <i class="o_group_toggle_icon fa fa-chevron-down"></i>
+                <div class="o_group_toggle_title">
+                    <t t-slot="title" />
+                </div>
+            </div>
+        </xpath>
+        <!-- Wrap rows in collapsible div -->
+        <xpath expr="//t[@t-foreach='getRows()']" position="replace">
+            <div class="o_group_toggle_content o_inner_group_content">
+                <t t-foreach="getRows()" t-as="row" t-key="row_index" t-if="row.isVisible">
+                    <t t-foreach="row" t-as="cell" t-key="cell_index">
+                        <t t-set="marginOnSmallScreen" t-value="cell_last ? 'mb-3 mb-sm-0' : ''"/>
+                        <t t-if="cell.subType === 'item_component'">
+                            <t t-call="web.Form.InnerGroup.ItemComponent">
+                                <t t-set="cell" t-value="cell" />
+                                <t t-set="marginOnSmallScreen" t-value="marginOnSmallScreen" />
+                            </t>
+                        </t>
+
+                        <t t-else="">
+                            <div
+                                class="o_cell o_cell_custom"
+                                t-attf-style="{{ cell.itemSpan > 1 ? '--o-grid-column-span: ' + cell.itemSpan + ';' : '' }}"
+                                t-attf-class="{{ cell.subType === 'label' ? 'o_wrap_label text-break text-900' : null }} {{ marginOnSmallScreen }}"
+                                t-if="cell.isVisible">
+                                <t t-slot="{{ cell.name }}" />
+                            </div>
+                        </t>
+
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+</templates>

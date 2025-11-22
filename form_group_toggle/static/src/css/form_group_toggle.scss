@@ -1,0 +1,52 @@
+/* Form Group Toggle Styles */
+
+.o_group_toggle_header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer !important;
+    user-select: none;
+
+    &:hover {
+        opacity: 0.8;
+
+        .o_group_toggle_icon {
+            color: #000;
+        }
+    }
+
+    // Inner groups only (identified by g-col-sm-* class)
+    &[class*="g-col-sm-"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.o_group_toggle_icon {
+    font-size: 11px;
+    color: #666;
+    transition: color 0.2s ease;
+    margin-right: 4px;
+    flex-shrink: 0;
+    align-self: center;
+    position: relative;
+    top: 1px;  // Nudge down slightly to align with text baseline
+}
+
+.o_group_toggle_title {
+    flex: 1;
+}
+
+.o_group_toggle_content {
+    display: contents;
+    /* When hidden, display: none is set via JavaScript */
+
+    // Inner group content - add padding to match header
+    &.o_inner_group_content {
+        // Apply padding to all cells to match header padding
+        .o_cell {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}

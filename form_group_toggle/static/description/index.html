@@ -1,206 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Group Toggle</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f8f9fa;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #875a7b;
-            border-bottom: 3px solid #875a7b;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        h2 {
-            color: #875a7b;
-            margin-top: 30px;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 8px;
-        }
-        h3 {
-            color: #6c757d;
-            margin-top: 20px;
-        }
-        ul {
-            line-height: 1.8;
-        }
-        li {
-            margin: 8px 0;
-        }
-        .feature-list {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 6px;
-            border-left: 4px solid #875a7b;
-        }
-        .feature-list li {
-            margin: 12px 0;
-        }
-        .screenshot {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .screenshot img {
-            max-width: 100%;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .screenshot p {
-            margin-top: 10px;
-            color: #6c757d;
-            font-style: italic;
-        }
-        pre {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            padding: 15px;
-            overflow-x: auto;
-            font-size: 14px;
-        }
-        code {
-            background: #f8f9fa;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-        }
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin: 5px 5px 5px 0;
-        }
-        .badge-version {
-            background: #875a7b;
-            color: white;
-        }
-        .badge-license {
-            background: #28a745;
-            color: white;
-        }
-        .info-box {
-            background: #e7f3ff;
-            border-left: 4px solid #0066cc;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .author-section {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #e9ecef;
-            color: #6c757d;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Form Group Toggle</h1>
-
-        <div>
-            <span class="badge badge-version">Odoo 19.0</span>
-            <span class="badge badge-license">AGPL-3</span>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Form Group Toggle</h2>
+        <h3 class="oe_slogan">Collapse and expand groups in Odoo form views</h3>
+        <div class="oe_demo oe_picture oe_screenshot">
+            <img src="expanded.png" alt="Groups expanded">
         </div>
+        <div class="oe_demo oe_picture oe_screenshot">
+            <img src="collapsed.png" alt="Groups collapsed">
+        </div>
+    </div>
+</section>
 
-        <p style="font-size: 18px; color: #6c757d; margin-top: 20px;">
-            Collapse and expand groups in Odoo form views with a simple click.
-        </p>
-
-        <h2>Features</h2>
-        <div class="feature-list">
-            <ul>
-                <li>✓ Click anywhere on group titles to collapse/expand content</li>
-                <li>✓ Smooth animations and hover effects</li>
-                <li>✓ Works on all groups with labels in form views</li>
-                <li>✓ Clean, intuitive chevron icons</li>
-                <li>✓ Fully compatible with Odoo 19</li>
-                <li>✓ No configuration needed - works out of the box</li>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Features</h2>
+        <div class="oe_span12">
+            <ul class="oe_mt32">
+                <li>Click anywhere on group titles to collapse/expand content</li>
+                <li>Smooth animations and hover effects</li>
+                <li>Works on all groups with labels in form views</li>
+                <li>Clean, intuitive chevron icons</li>
+                <li>Fully compatible with Odoo 19</li>
+                <li>No configuration needed - works out of the box</li>
             </ul>
         </div>
+    </div>
+</section>
 
-        <h2>Usage</h2>
-
-        <div class="info-box">
-            <strong>Getting Started:</strong>
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Usage</h2>
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <strong>Getting Started:</strong>
+            </p>
             <ol>
                 <li>Install the module</li>
                 <li>Open any form view with groups that have labels</li>
                 <li>Click on the group title or chevron icon to toggle</li>
             </ol>
-        </div>
-
-        <p>Any group with a <code>string</code> attribute will automatically have collapse/expand functionality.</p>
-
-        <h3>Screenshots</h3>
-
-        <div class="screenshot">
-            <img src="expanded.png" alt="Groups expanded" />
-            <p>Groups in expanded state showing all content</p>
-        </div>
-
-        <div class="screenshot">
-            <img src="collapsed.png" alt="Groups collapsed" />
-            <p>Groups in collapsed state - click to expand</p>
-        </div>
-
-        <h3>Example</h3>
-
-        <p>Define a group in your form view:</p>
-
-        <pre><code>&lt;group string="Contact Information"&gt;
-    &lt;field name="email"/&gt;
-    &lt;field name="phone"/&gt;
-&lt;/group&gt;</code></pre>
-
-        <p>The "Contact Information" group will automatically display a chevron icon next to the title. Click anywhere on the title area to collapse or expand the group content.</p>
-
-        <h2>Benefits</h2>
-        <ul>
-            <li><strong>Improved User Experience:</strong> Reduce visual clutter by collapsing unused sections</li>
-            <li><strong>Better Navigation:</strong> Quickly find and focus on relevant information</li>
-            <li><strong>Clean Interface:</strong> Professional look with smooth animations</li>
-            <li><strong>Universal:</strong> Works with both InnerGroup and OuterGroup components</li>
-        </ul>
-
-        <h2>Technical Details</h2>
-        <ul>
-            <li>Patches Odoo 19's OWL form group components</li>
-            <li>Uses modern CSS with SCSS</li>
-            <li>Includes comprehensive QUnit tests</li>
-            <li>Follows OCA coding standards</li>
-        </ul>
-
-        <h2>Requirements</h2>
-        <ul>
-            <li>Odoo 19.0</li>
-        </ul>
-
-        <div class="author-section">
-            <h2>Author & License</h2>
-            <p><strong>Author:</strong> Bohdan Holoborodko</p>
-            <p><strong>Email:</strong> <a href="mailto:odoo@holoborodko.com.ua">odoo@holoborodko.com.ua</a></p>
-            <p><strong>Website:</strong> <a href="https://holoborodko.com.ua" target="_blank">holoborodko.com.ua</a></p>
-            <p><strong>License:</strong> AGPL-3.0</p>
+            <p class="oe_mt32">
+                Any group with a <code>string</code> attribute will automatically have collapse/expand functionality.
+            </p>
         </div>
     </div>
-</body>
-</html>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Example</h2>
+        <div class="oe_span12">
+            <p class="oe_mt32">Define a group in your form view:</p>
+            <pre>&lt;group string="Contact Information"&gt;
+    &lt;field name="email"/&gt;
+    &lt;field name="phone"/&gt;
+&lt;/group&gt;</pre>
+            <p class="oe_mt32">
+                The "Contact Information" group will automatically display a chevron icon next to the title.
+                Click anywhere on the title area to collapse or expand the group content.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Benefits</h2>
+        <div class="oe_span12">
+            <ul class="oe_mt32">
+                <li><strong>Improved User Experience:</strong> Reduce visual clutter by collapsing unused sections</li>
+                <li><strong>Better Navigation:</strong> Quickly find and focus on relevant information</li>
+                <li><strong>Clean Interface:</strong> Professional look with smooth animations</li>
+                <li><strong>Universal:</strong> Works with both InnerGroup and OuterGroup components</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Contact / Support</h2>
+        <h3 class="oe_slogan">Need help or want extra features?</h3>
+        <div class="oe_span12">
+            <p class="oe_mt32 text-justify">
+                <strong>Author:</strong> Bohdan Holoborodko<br/>
+                <strong>Email:</strong> <a href="mailto:odoo@holoborodko.com.ua">odoo@holoborodko.com.ua</a><br/>
+                <strong>Website:</strong> <a href="https://holoborodko.com.ua" target="_blank">holoborodko.com.ua</a><br/>
+                <strong>License:</strong> AGPL-3.0
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>

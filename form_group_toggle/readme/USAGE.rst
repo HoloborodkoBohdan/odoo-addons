@@ -7,7 +7,7 @@ To use this module:
 Any group with a ``string`` attribute will automatically have collapse/expand functionality.
 
 Screenshots
------------
+~~~~~~~~~~~
 
 Groups in opened state:
 
@@ -22,7 +22,7 @@ Groups in closed state:
    :width: 600px
 
 Example
--------
+~~~~~~~
 
 .. code-block:: xml
 

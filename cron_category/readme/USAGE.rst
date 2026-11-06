@@ -7,7 +7,7 @@ To use this module:
 5. Assign categories to your cron jobs using the "Category" field
 
 Managing Categories
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 * Navigate to **Settings > Technical > Automation > Scheduled Actions Categories**
 * Click "Create" to add a new category
@@ -15,7 +15,7 @@ Managing Categories
 * Save the category
 
 Assigning Categories to Cron Jobs
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open any scheduled action
 * Select a category from the "Category" dropdown
@@ -23,7 +23,7 @@ Assigning Categories to Cron Jobs
 * All cron jobs without a category are automatically assigned to "Uncategorized"
 
 Filtering by Category
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 * In the Scheduled Actions list view, use the "Group By" filter
 * Select "Category" to group all cron jobs by their categories

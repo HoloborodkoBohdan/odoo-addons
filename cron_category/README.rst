@@ -71,6 +71,16 @@ Filtering by Category
 * Select "Category" to group all cron jobs by their categories
 * This helps you quickly find and manage related scheduled actions
 
+Changelog
+=========
+
+19.0.1.0.1
+~~~~~~~~~~
+
+* Give the *Uncategorized* category to the scheduled actions that existed
+  before the install (on install and on update from 19.0.1.0.0).
+* Add tests.
+
 Bug Tracker
 ===========
 

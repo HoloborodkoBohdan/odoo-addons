@@ -15,7 +15,7 @@ class IrCron(models.Model):
     category_id = fields.Many2one(
         comodel_name="ir.cron.category",
         string="Category",
-        default=_get_default_category,
+        default=lambda self: self._get_default_category(),
         ondelete="set null",
         index=True,
     )

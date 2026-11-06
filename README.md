@@ -2,7 +2,7 @@
 
 Free Odoo addons by Bohdan Holoborodko, published on the
 [Odoo Apps Store](https://apps.odoo.com/apps/modules/browse?search=holoborodko).
-One branch per Odoo version: [16.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/16.0) · **17.0** · [18.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/18.0) · [19.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/19.0).
+One branch per Odoo version: [16.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/16.0) · **17.0** · [18.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/18.0) · [19.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/19.0) · [20.0](https://github.com/HoloborodkoBohdan/odoo-addons/tree/20.0).
 
 ## Available addons
 

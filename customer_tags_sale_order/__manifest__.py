@@ -18,7 +18,7 @@
         "views/res_partner.xml",
     ],
     'images': [
-        'static/description/baner.png',
+        'static/description/banner.png',
         'static/description/partner-sales-tag.png',
     ],
 }

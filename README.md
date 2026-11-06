@@ -9,8 +9,10 @@ One branch per Odoo version: [16.0](https://github.com/HoloborodkoBohdan/odoo-ad
 addon | version | summary | Apps Store
 --- | --- | --- | ---
 [cron_category](cron_category/) | 19.0.1.1.0 | Add categories to scheduled actions for better organization | [19.0](https://apps.odoo.com/apps/modules/19.0/cron_category/)
+[cron_run_history](cron_run_history/) | 19.0.1.0.0 | Record every scheduled action run: status, duration, records processed and the error traceback | [19.0](https://apps.odoo.com/apps/modules/19.0/cron_run_history/)
 [customer_tags_sale_order](customer_tags_sale_order/) | 19.0.1.0.1 | Show customer tags in sale order | [19.0](https://apps.odoo.com/apps/modules/19.0/customer_tags_sale_order/)
 [form_group_toggle](form_group_toggle/) | 19.0.1.0.1 | Collapse and expand groups in Odoo form views | [19.0](https://apps.odoo.com/apps/modules/19.0/form_group_toggle/)
+[mail_send_confirm](mail_send_confirm/) | 19.0.1.0.0 | Ask for confirmation before a chatter message is emailed to customers | [19.0](https://apps.odoo.com/apps/modules/19.0/mail_send_confirm/)
 
 `customer_tags_sale_order` was published as `partner_tags_sale_order` for
 Odoo 12.0–15.0: [12.0](https://apps.odoo.com/apps/modules/12.0/partner_tags_sale_order/) · [13.0](https://apps.odoo.com/apps/modules/13.0/partner_tags_sale_order/) · [14.0](https://apps.odoo.com/apps/modules/14.0/partner_tags_sale_order/) · [15.0](https://apps.odoo.com/apps/modules/15.0/partner_tags_sale_order/).

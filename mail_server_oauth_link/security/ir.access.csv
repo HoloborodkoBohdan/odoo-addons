@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+access_mail_server_oauth_link_wizard_system,mail.server.oauth.link.wizard.system,mail.server.oauth.link.wizard,base.group_system,crud,

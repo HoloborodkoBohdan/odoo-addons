@@ -11,6 +11,7 @@ addon | version | summary | Apps Store
 [cron_category](cron_category/) | 20.0.1.1.0 | Add categories to scheduled actions for better organization | [20.0](https://apps.odoo.com/apps/modules/20.0/cron_category/)
 [cron_run_history](cron_run_history/) | 20.0.1.0.0 | Record every scheduled action run: status, duration, records processed and the error traceback | [20.0](https://apps.odoo.com/apps/modules/20.0/cron_run_history/)
 [mail_send_confirm](mail_send_confirm/) | 20.0.1.0.0 | Ask for confirmation before a chatter message is emailed to customers | [20.0](https://apps.odoo.com/apps/modules/20.0/mail_send_confirm/)
+[mail_server_oauth_link](mail_server_oauth_link/) | 20.0.1.0.0 | Send the Gmail / Outlook authorization link of a mail server to the mailbox owner instead of opening it yourself | [20.0](https://apps.odoo.com/apps/modules/20.0/mail_server_oauth_link/)
 
 ## Installation
 

@@ -1,0 +1,108 @@
+<section class="container" style="padding-top:40px;padding-bottom:24px;">
+  <div class="row">
+    <div class="col-12 text-center">
+      <p style="color:#875A7B;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Email &middot; Gmail &amp; Outlook OAuth</p>
+      <h1 style="color:#1F2A44;font-size:40px;font-weight:700;margin-bottom:12px;">Mail Server OAuth Link</h1>
+      <p style="color:#4B5563;font-size:20px;line-height:1.5;margin-bottom:20px;">Send the Gmail / Outlook authorization link of a mail server to the mailbox owner instead of opening it yourself.</p>
+      <span class="badge" style="background-color:#875A7B;color:#FFFFFF;font-size:13px;padding:7px 12px;border-radius:14px;margin:0 4px;">Odoo 20.0</span>
+      <span class="badge" style="background-color:#EEE7EC;color:#5B3F59;font-size:13px;padding:7px 12px;border-radius:14px;margin:0 4px;">Community &amp; Enterprise</span>
+      <span class="badge" style="background-color:#EEE7EC;color:#5B3F59;font-size:13px;padding:7px 12px;border-radius:14px;margin:0 4px;">AGPL-3</span>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-top:8px;padding-bottom:24px;">
+  <div style="border:1px solid #E5E7EB;border-radius:10px;padding:24px;">
+    <h2 style="color:#1F2A44;font-size:22px;font-weight:700;margin-bottom:10px;">The problem</h2>
+    <p style="color:#4B5563;font-size:16px;line-height:1.6;margin-bottom:0;">
+      With Gmail or Outlook OAuth authentication, <b>Connect your Gmail/Outlook account</b> opens the
+      sign-in page in the administrator's own browser. The authorization is made for the account the
+      administrator is signed in to &mdash; the wrong mailbox when they set up <i>sales@</i> or a
+      colleague's address. Odoo gives no way to hand that sign-in to the owner of the mailbox.
+    </p>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <h2 class="text-center" style="color:#1F2A44;font-size:28px;font-weight:700;margin-bottom:24px;">Highlights</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-share-alt"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">A link to send</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">A button next to the stock one on outgoing and incoming Gmail and Outlook servers, with a copy field.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-user-o"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">No Odoo user needed</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">The owner opens the link, signs in to Google or Microsoft with the mailbox account and approves.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-check-circle"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Right mailbox only</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Odoo checks the signed-in account and logs in to the mailbox with the new authorization; if either fails, nothing is saved.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-lock"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Signed, single use</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Signed, bound to one server and its address, valid 24 hours by default, revocable; its secret stays out of server logs.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-bell-o"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">You are told</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">The administrator who made the link gets an Odoo notification when the owner has authorized the server.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-plug"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Same OAuth app</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">The stock redirect URIs are reused: nothing new to register at Google or Microsoft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <div style="background-color:#F7F4F6;border-radius:10px;padding:28px;">
+    <h2 style="color:#1F2A44;font-size:24px;font-weight:700;margin-bottom:12px;">How to use</h2>
+    <ol style="color:#374151;font-size:16px;line-height:1.7;margin-bottom:0;">
+      <li>Install <b>Mail Server OAuth Link</b> from Apps.</li>
+      <li>Go to <b>Settings &rsaquo; Technical &rsaquo; Email &rsaquo; Outgoing Mail Servers</b> (or <b>Incoming Mail Servers</b>), choose <b>Gmail</b> or <b>Outlook OAuth Authentication</b> and enter the mailbox address as <b>Username</b>.</li>
+      <li>Click <b>Get a link for the mailbox owner</b>, copy the link (Odoo keeps no copy) and send it to the owner, who must be able to sign in to the mailbox.</li>
+      <li>The owner opens it, clicks <b>Continue with Google</b> or <b>Continue with Microsoft</b>, signs in with the mailbox account and accepts.</li>
+      <li>The server shows <b>Gmail Token Valid</b> or <b>Outlook Token Valid</b>. The link works once and expires; getting a new link, <b>Revoke Link</b> in the dialog, archiving the server or changing its address makes it stop working.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <h2 style="color:#1F2A44;font-size:24px;font-weight:700;margin-bottom:12px;">Technical details</h2>
+  <ul style="color:#374151;font-size:15px;line-height:1.7;">
+    <li>Depends on: <code>google_gmail</code>, <code>microsoft_outlook</code> (both in Community, installed with Discuss).</li>
+    <li>Adds to <code>ir.mail_server</code> and <code>fetchmail.server</code>: the hashes of the link secrets, the link expiry and its creator (administrators only; the link itself is not stored); a dialog model <code>mail.server.oauth.link.wizard</code>.</li>
+    <li>Overrides the four stock callback routes <code>/google_gmail/confirm</code>, <code>/google_gmail/iap_confirm</code>, <code>/microsoft_outlook/confirm</code> and <code>/microsoft_outlook/iap_confirm</code>: they accept visitors without a session for owner links only; any other request still goes to the login page.</li>
+    <li>The link opens <code>/mail_server_oauth_link/authorize</code> with its secret in the URL fragment (never sent to a server); the page keeps it in an HttpOnly cookie. The OAuth <code>state</code> carries a separate one-time value valid one hour at most.</li>
+    <li>Account check: Gmail from Google's user info (the stock <code>userinfo.email</code> scope); Outlook from the id token of a server-side token refresh, like the stock check. No scope is added. Then Odoo logs in to the mailbox with the new tokens (SMTP MAIL FROM / RCPT TO without sending, or IMAP login) before keeping them.</li>
+    <li>Without own client ID and secret, Odoo Enterprise uses Odoo's IAP proxy and the owner link follows it; on Community the client ID and secret are required, as for the stock button.</li>
+    <li>The link is valid 24 hours; system parameter <code>mail_server_oauth_link.validity_hours</code> changes it (1&ndash;168). The owner page needs JavaScript.</li>
+    <li>Uninstall removes the added fields and the dialog; the saved tokens stay on the servers.</li>
+  </ul>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:40px;">
+  <div class="text-center" style="border:1px solid #E5E7EB;border-radius:10px;padding:28px;">
+    <h2 style="color:#1F2A44;font-size:22px;font-weight:700;margin-bottom:8px;">Questions or a feature request?</h2>
+    <p style="color:#4B5563;font-size:16px;margin-bottom:16px;">Bohdan Holoborodko answers by email.</p>
+    <a href="mailto:odoo@holoborodko.com.ua" class="btn" style="background-color:#875A7B;color:#FFFFFF;font-weight:600;padding:10px 22px;border-radius:8px;">odoo@holoborodko.com.ua</a>
+    <p style="color:#6B7280;font-size:14px;margin-top:16px;margin-bottom:0;">More free modules by Bohdan Holoborodko: <a href="https://apps.odoo.com/apps/modules/browse?search=holoborodko" style="color:#875A7B;">Odoo Apps Store</a></p>
+  </div>
+</section>

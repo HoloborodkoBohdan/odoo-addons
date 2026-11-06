@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="ir_config_parameter_retention_days" model="ir.config_parameter">
+        <field name="key">cron_run_history.retention_days</field>
+        <field name="value">30</field>
+    </record>
+</odoo>

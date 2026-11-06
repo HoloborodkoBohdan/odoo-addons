@@ -1,0 +1,111 @@
+<!--
+  Apps Store description. No screenshots yet: add a main screenshot (the run list) and one per
+  feature block when they exist, and list them in the manifest `images` after the banner.
+-->
+<section class="container" style="padding-top:40px;padding-bottom:24px;">
+  <div class="row">
+    <div class="col-12 text-center">
+      <p style="color:#875A7B;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Technical &middot; Scheduled Actions</p>
+      <h1 style="color:#1F2A44;font-size:40px;font-weight:700;margin-bottom:12px;">Cron Run History</h1>
+      <p style="color:#4B5563;font-size:20px;line-height:1.5;margin-bottom:20px;">Record every scheduled action run: status, duration, records processed and the error traceback &mdash; without access to the server log.</p>
+      <span class="badge" style="background-color:#875A7B;color:#FFFFFF;font-size:13px;padding:7px 12px;border-radius:14px;margin:0 4px;">Odoo 20.0</span>
+      <span class="badge" style="background-color:#EEE7EC;color:#5B3F59;font-size:13px;padding:7px 12px;border-radius:14px;margin:0 4px;">Community &amp; Enterprise</span>
+      <span class="badge" style="background-color:#EEE7EC;color:#5B3F59;font-size:13px;padding:7px 12px;border-radius:14px;margin:0 4px;">AGPL-3</span>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <h2 class="text-center" style="color:#1F2A44;font-size:28px;font-weight:700;margin-bottom:24px;">Highlights</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-history"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Every run recorded</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Start, end, duration and status of each run of each scheduled action.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-bug"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Errors with traceback</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">A failed run keeps its error message and full traceback, although Odoo rolls back the job.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-clock-o"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Timeouts made visible</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Runs whose process stopped before the end are marked Interrupted; runs Odoo skipped after repeated timeouts are marked Timed Out.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-tasks"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Batch progress</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Iterations, records done and records remaining for jobs that report their progress.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-hand-pointer-o"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Scheduler or manual</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Each run shows whether the scheduler started it or a user clicked Run Manually, and who.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="background-color:#F7F4F6;border-radius:10px;padding:20px;height:100%;">
+        <p style="font-size:26px;color:#875A7B;margin-bottom:8px;"><i class="fa fa-trash-o"></i></p>
+        <h3 style="color:#1F2A44;font-size:18px;font-weight:700;margin-bottom:6px;">Cleans up after itself</h3>
+        <p style="color:#4B5563;font-size:15px;line-height:1.5;margin-bottom:0;">Runs older than 30 days are deleted automatically; the period is a system parameter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="color:#1F2A44;font-size:24px;font-weight:700;margin-bottom:10px;">One list for all runs</h2>
+      <p style="color:#4B5563;font-size:16px;line-height:1.6;">Settings &rsaquo; Technical &rsaquo; Automation &rsaquo; Scheduled Action Runs lists the runs, most recent first, with a coloured status badge. Filter the failed runs (failed, timed out, interrupted), partially done or running ones, the manual runs, or a period; group them by scheduled action, status, how they were started or day. Open a run to read its error and traceback.</p>
+    </div>
+    <div class="col-md-6">
+      <h2 style="color:#1F2A44;font-size:24px;font-weight:700;margin-bottom:10px;">Runs button on the scheduled action</h2>
+      <p style="color:#4B5563;font-size:16px;line-height:1.6;">The form of a scheduled action gets a Runs button with the number of recorded runs and the status of the last one, shown in red when it failed. A click lists the runs of that action.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <div style="background-color:#F7F4F6;border-radius:10px;padding:28px;">
+    <h2 style="color:#1F2A44;font-size:24px;font-weight:700;margin-bottom:12px;">How to use</h2>
+    <ol style="color:#374151;font-size:16px;line-height:1.7;margin-bottom:0;">
+      <li>Install <b>Cron Run History</b> from Apps. Nothing to configure: the next runs are recorded.</li>
+      <li>Go to <b>Settings &rsaquo; Technical &rsaquo; Automation &rsaquo; Scheduled Action Runs</b>, or open a scheduled action and click <b>Runs</b>.</li>
+      <li>Use the <b>Failed</b> filter to find the runs that went wrong and open one to read the traceback.</li>
+      <li>To keep runs longer or shorter than 30 days, set the system parameter <code>cron_run_history.retention_days</code> (developer mode, Settings &rsaquo; Technical &rsaquo; Parameters &rsaquo; System Parameters); <code>0</code> keeps every run.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:24px;">
+  <h2 style="color:#1F2A44;font-size:24px;font-weight:700;margin-bottom:12px;">Technical details</h2>
+  <ul style="color:#374151;font-size:15px;line-height:1.7;">
+    <li>Depends on: <code>base</code> only.</li>
+    <li>New model <code>ir.cron.run</code>, readable and deletable by Settings administrators (Administration / Settings group).</li>
+    <li>Extends <code>ir.cron</code> by overriding <code>_process_job</code>, <code>_add_progress</code>, <code>_callback</code>, <code>_update_failure_count</code> and <code>method_direct_trigger</code>; the job itself runs unchanged.</li>
+    <li>Each run is written in short database transactions of its own, one at the start and one at the end, so a run stays visible as Running while it works and its record survives the rollback of a failed job.</li>
+    <li>If the history cannot be written, a warning is logged and the scheduled action runs as usual.</li>
+    <li>Two auto-vacuum methods: one deletes runs older than the retention period, one marks as Interrupted the runs left Running by a process that stopped.</li>
+    <li>Only runs that happen after the installation are recorded. Uninstalling the module deletes the history.</li>
+  </ul>
+</section>
+
+<section class="container" style="padding-top:24px;padding-bottom:40px;">
+  <div class="text-center" style="border:1px solid #E5E7EB;border-radius:10px;padding:28px;">
+    <h2 style="color:#1F2A44;font-size:22px;font-weight:700;margin-bottom:8px;">Questions or a feature request?</h2>
+    <p style="color:#4B5563;font-size:16px;margin-bottom:16px;">Bohdan Holoborodko answers by email.</p>
+    <a href="mailto:odoo@holoborodko.com.ua" class="btn" style="background-color:#875A7B;color:#FFFFFF;font-weight:600;padding:10px 22px;border-radius:8px;">odoo@holoborodko.com.ua</a>
+    <p style="color:#6B7280;font-size:14px;margin-top:16px;margin-bottom:0;">More free modules by Bohdan Holoborodko: <a href="https://apps.odoo.com/apps/modules/browse?search=Bohdan%20Holoborodko" style="color:#875A7B;">Odoo Apps Store</a></p>
+  </div>
+</section>

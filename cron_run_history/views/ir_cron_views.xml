@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_view_form" model="ir.ui.view">
+        <field name="name">ir.cron.view.form.inherit.run.history</field>
+        <field name="model">ir.cron</field>
+        <field name="inherit_id" ref="base.ir_cron_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    name="action_view_runs"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="history"
+                    groups="base.group_system"
+                >
+                    <div class="o_stat_info">
+                        <span class="o_stat_value"><field name="run_count"/> Runs</span>
+                        <span
+                            class="o_stat_text text-danger"
+                            invisible="last_run_state not in ('failure', 'timeout', 'interrupted')"
+                        >
+                            <field name="last_run_state"/>
+                        </span>
+                        <span
+                            class="o_stat_text"
+                            invisible="not last_run_state or last_run_state in ('failure', 'timeout', 'interrupted')"
+                        >
+                            <field name="last_run_state"/>
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

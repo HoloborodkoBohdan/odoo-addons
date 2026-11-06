@@ -3,7 +3,7 @@
 {
     "name": "Cron Category",
     "summary": "Add categories to scheduled actions for better organization",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.0",
     "category": "Tools",
     "website": "https://holoborodko.com.ua",
     "author": "Bohdan Holoborodko",
@@ -15,7 +15,7 @@
     ],
     "post_init_hook": "post_init_hook",
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/cron_category_data.xml",
         "views/cron_category_views.xml",
         "views/ir_cron_views.xml",

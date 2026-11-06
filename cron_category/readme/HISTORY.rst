@@ -1,7 +1,5 @@
-19.0.1.0.1
+20.0.1.0.0
 ~~~~~~~~~~
 
-* Give the *Uncategorized* category to the scheduled actions that existed
-  before the install (on install and on update from 19.0.1.0.0).
-* Add tests.
+* Migrated to Odoo 20: access rights moved to ``ir.access`` (``security/ir.access.csv``).
 

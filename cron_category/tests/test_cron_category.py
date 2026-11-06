@@ -3,7 +3,8 @@
 
 from psycopg2 import IntegrityError
 
-from odoo.tests import TransactionCase, tagged
+from odoo.exceptions import AccessError
+from odoo.tests import TransactionCase, new_test_user, tagged
 from odoo.tools import mute_logger
 
 
@@ -35,3 +36,15 @@ class TestCronCategory(TransactionCase):
         with mute_logger("odoo.sql_db"), self.assertRaises(IntegrityError):
             self.env["ir.cron.category"].create({"name": self.uncategorized.name})
             self.env.flush_all()
+
+    def test_access_rights(self):
+        user = new_test_user(self.env, login="cron_category_user", groups="base.group_user")
+        admin = new_test_user(self.env, login="cron_category_admin", groups="base.group_system")
+        Category = self.env["ir.cron.category"]
+        self.assertIn(self.uncategorized, Category.with_user(user).search([]))
+        with self.assertRaises(AccessError):
+            Category.with_user(user).create({"name": "Not allowed"})
+        with self.assertRaises(AccessError):
+            self.uncategorized.with_user(user).write({"name": "Renamed"})
+        category = Category.with_user(admin).create({"name": "Reports"})
+        category.with_user(admin).unlink()

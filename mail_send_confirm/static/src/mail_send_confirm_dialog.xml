@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="mail_send_confirm.MailSendConfirmDialog">
+        <Dialog size="'md'" title="this.props.title" modalRef="this.modalRef">
+            <p>This message will be sent by email to:</p>
+            <ul class="o_mail_send_confirm_recipients list-unstyled mb-0 overflow-auto" style="max-height: 50vh;">
+                <li t-foreach="this.props.recipients" t-as="recipient" t-key="recipient_index" class="py-1">
+                    <span class="fw-bold" t-out="recipient.name"/>
+                    <span t-if="recipient.email" class="text-muted ms-1" t-out="'&lt;' + recipient.email + '&gt;'"/>
+                    <span t-else="" class="text-danger ms-1">(no email address)</span>
+                </li>
+            </ul>
+            <t t-set-slot="footer">
+                <button class="btn" t-att-class="this.props.confirmClass" t-on-click="this._confirm" t-out="this.props.confirmLabel" data-hotkey="q"/>
+                <button class="btn btn-secondary" t-on-click="this._cancel" t-out="this.props.cancelLabel" data-hotkey="x"/>
+            </t>
+        </Dialog>
+    </t>
+
+</templates>

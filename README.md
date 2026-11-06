@@ -8,7 +8,7 @@ One branch per Odoo version: **16.0** · [17.0](https://github.com/HoloborodkoBo
 
 addon | version | summary | Apps Store
 --- | --- | --- | ---
-[customer_tags_sale_order](customer_tags_sale_order/) | 16.0.1.0.0 | Show customer tags in sale order | [16.0](https://apps.odoo.com/apps/modules/16.0/customer_tags_sale_order/)
+[customer_tags_sale_order](customer_tags_sale_order/) | 16.0.1.0.1 | Show customer tags in sale order | [16.0](https://apps.odoo.com/apps/modules/16.0/customer_tags_sale_order/)
 
 `customer_tags_sale_order` was published as `partner_tags_sale_order` for
 Odoo 12.0–15.0: [12.0](https://apps.odoo.com/apps/modules/12.0/partner_tags_sale_order/) · [13.0](https://apps.odoo.com/apps/modules/13.0/partner_tags_sale_order/) · [14.0](https://apps.odoo.com/apps/modules/14.0/partner_tags_sale_order/) · [15.0](https://apps.odoo.com/apps/modules/15.0/partner_tags_sale_order/).

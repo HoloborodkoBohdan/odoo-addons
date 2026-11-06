@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_cron_run_system,ir.cron.run.system,model_ir_cron_run,base.group_system,1,0,0,1

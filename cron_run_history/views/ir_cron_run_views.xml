@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_run_view_list" model="ir.ui.view">
+        <field name="name">ir.cron.run.view.list</field>
+        <field name="model">ir.cron.run</field>
+        <field name="arch" type="xml">
+            <list string="Scheduled Action Runs" create="0" edit="0">
+                <field name="date_start"/>
+                <field name="cron_id"/>
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-success="state == 'success'"
+                    decoration-warning="state == 'partial'"
+                    decoration-danger="state in ('failure', 'timeout', 'interrupted')"
+                    decoration-info="state == 'running'"
+                />
+                <field name="duration"/>
+                <field name="trigger"/>
+                <field name="user_id" optional="show"/>
+                <field name="loop_count" optional="hide"/>
+                <field name="records_done" optional="show"/>
+                <field name="records_remaining" optional="hide"/>
+                <field name="date_end" optional="hide"/>
+                <field name="error_message" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ir_cron_run_view_form" model="ir.ui.view">
+        <field name="name">ir.cron.run.view.form</field>
+        <field name="model">ir.cron.run</field>
+        <field name="arch" type="xml">
+            <form string="Scheduled Action Run" create="0" edit="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="cron_id"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field
+                                name="state"
+                                widget="badge"
+                                decoration-success="state == 'success'"
+                                decoration-warning="state == 'partial'"
+                                decoration-danger="state in ('failure', 'timeout', 'interrupted')"
+                                decoration-info="state == 'running'"
+                            />
+                            <field name="trigger"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="duration"/>
+                        </group>
+                        <group>
+                            <field name="loop_count"/>
+                            <field name="records_done"/>
+                            <field name="records_remaining"/>
+                        </group>
+                    </group>
+                    <group string="Error" invisible="not error_message">
+                        <field name="error_message" nolabel="1" colspan="2"/>
+                    </group>
+                    <group string="Traceback" invisible="not traceback">
+                        <field name="traceback" nolabel="1" colspan="2" class="font-monospace small"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ir_cron_run_view_search" model="ir.ui.view">
+        <field name="name">ir.cron.run.view.search</field>
+        <field name="model">ir.cron.run</field>
+        <field name="arch" type="xml">
+            <search string="Scheduled Action Runs">
+                <field name="cron_id"/>
+                <field name="error_message"/>
+                <field name="user_id"/>
+                <filter
+                    string="Failed"
+                    name="failed"
+                    domain="[('state', 'in', ('failure', 'timeout', 'interrupted'))]"
+                />
+                <filter string="Partially Done" name="partial" domain="[('state', '=', 'partial')]"/>
+                <filter string="Running" name="running" domain="[('state', '=', 'running')]"/>
+                <separator/>
+                <filter string="Run Manually" name="manual" domain="[('trigger', '=', 'manual')]"/>
+                <separator/>
+                <filter string="Start" name="filter_date_start" date="date_start"/>
+                <group>
+                    <filter string="Scheduled Action" name="group_cron" context="{'group_by': 'cron_id'}"/>
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Started By" name="group_trigger" context="{'group_by': 'trigger'}"/>
+                    <filter string="Day" name="group_day" context="{'group_by': 'date_start:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="ir_cron_run_action" model="ir.actions.act_window">
+        <field name="name">Scheduled Action Runs</field>
+        <field name="res_model">ir.cron.run</field>
+        <field name="path">cron-runs</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No scheduled action has run yet
+            </p>
+            <p>
+                Every run of a scheduled action is recorded here, with its status,
+                duration and error.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="ir_cron_run_menu"
+        name="Scheduled Action Runs"
+        parent="base.menu_automation"
+        action="ir_cron_run_action"
+        sequence="4"
+    />
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Holoborodko Bohdan
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="mail_server_oauth_link_wizard_view_form" model="ir.ui.view">
+        <field name="name">mail.server.oauth.link.wizard.view.form</field>
+        <field name="model">mail.server.oauth.link.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Link for the Mailbox Owner">
+                <field name="provider" invisible="1"/>
+                <p>
+                    Send this link to the owner of <field name="email" class="fw-bold"/>.
+                    They open it, sign in with
+                    <span invisible="provider != 'gmail'">that Google account</span>
+                    <span invisible="provider != 'outlook'">that Microsoft account</span>
+                    and accept the permissions, so they must be able to sign in to this mailbox.
+                    Odoo checks the account and logs in to the mailbox with the new authorization
+                    before it saves it on the server.
+                </p>
+                <field name="link" widget="CopyClipboardChar" class="w-100"/>
+                <group>
+                    <field name="expiration"/>
+                </group>
+                <p class="text-muted mb-0">
+                    The owner does not need an Odoo account. The link works once and expires
+                    at the date above. Getting a new link, changing the server address or
+                    type, or archiving the server makes this one stop working. Odoo keeps no
+                    copy of the link: copy it now.
+                </p>
+                <footer>
+                    <button string="Done" class="btn-primary" special="cancel" data-hotkey="q"/>
+                    <button name="action_revoke" type="object" string="Revoke Link"
+                        class="btn-secondary" data-hotkey="r"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

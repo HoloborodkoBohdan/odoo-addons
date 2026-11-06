@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Holoborodko Bohdan
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="fetchmail_server_view_form_gmail" model="ir.ui.view">
+        <field name="name">fetchmail.server.view.form.inherit.oauth.link.gmail</field>
+        <field name="model">fetchmail.server</field>
+        <field name="inherit_id" ref="google_gmail.fetchmail_server_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[button[@name='open_google_gmail_uri']]" position="inside">
+                <button type="object" name="action_oauth_link_open" class="btn-link px-0 ms-3"
+                    invisible="server_type != 'gmail'"
+                    title="Get a link to send to the owner of this mailbox: they sign in with their own Google account.">
+                    <i class="fa fa-share-alt"/>
+                    Get a link for the mailbox owner
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fetchmail_server_view_form_outlook" model="ir.ui.view">
+        <field name="name">fetchmail.server.view.form.inherit.oauth.link.outlook</field>
+        <field name="model">fetchmail.server</field>
+        <field name="inherit_id" ref="microsoft_outlook.fetchmail_server_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[button[@name='open_microsoft_outlook_uri']]" position="inside">
+                <button type="object" name="action_oauth_link_open" class="btn-link px-0 ms-3"
+                    invisible="server_type != 'outlook'"
+                    title="Get a link to send to the owner of this mailbox: they sign in with their own Microsoft account.">
+                    <i class="fa fa-share-alt"/>
+                    Get a link for the mailbox owner
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

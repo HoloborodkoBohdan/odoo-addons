@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Holoborodko Bohdan
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <template id="oauth_link_layout" name="Mail Server OAuth Link Layout">
+        <t t-call="web.layout">
+            <t t-set="title" t-value="page_title"/>
+            <t t-set="head">
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="referrer" content="no-referrer"/>
+                <meta name="robots" content="noindex, nofollow"/>
+                <t t-call-assets="web.assets_frontend" t-js="false"/>
+            </t>
+            <div class="container py-5" style="max-width: 560px;">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <t t-out="0"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- The pages the mailbox owner sees: no menu, no link back into Odoo,
+         no token in them. `button_url` is set only on the start page. -->
+    <template id="oauth_link_page" name="Mail Server OAuth Link Page">
+        <t t-call="mail_server_oauth_link.oauth_link_layout">
+            <h1 class="h4 mb-3" t-out="page_title"/>
+            <div t-attf-class="alert alert-#{level or 'info'} mb-3" role="alert">
+                <t t-out="message"/>
+            </div>
+            <p t-if="details" class="text-muted mb-3" t-out="details"/>
+            <a t-if="button_url" t-att-href="button_url" rel="noreferrer"
+                class="btn btn-primary btn-lg w-100" t-out="button_label"/>
+            <p t-if="expiration" class="small text-muted mt-3 mb-0">
+                This link works until <t t-out="expiration"/> (UTC).
+            </p>
+        </t>
+    </template>
+
+    <!-- First page of the link. The token is in the URL fragment, which the
+         browser never sends to a server: the script posts it once (it then
+         goes into an HttpOnly cookie) and removes it from the address bar. -->
+    <template id="oauth_link_open" name="Mail Server OAuth Link Opening">
+        <t t-call="mail_server_oauth_link.oauth_link_layout">
+            <h1 class="h4 mb-3" t-out="page_title"/>
+            <form id="o_oauth_link_form" method="post" action="/mail_server_oauth_link/open">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input type="hidden" name="token" id="o_oauth_link_token"/>
+            </form>
+            <p id="o_oauth_link_wait" class="mb-0">Opening the link...</p>
+            <noscript>
+                <div class="alert alert-warning mt-3 mb-0" role="alert">
+                    Please enable JavaScript to open this link.
+                </div>
+            </noscript>
+            <div id="o_oauth_link_invalid" class="alert alert-warning mb-0 d-none" role="alert">
+                This authorization link is not valid any more: it was already used, it expired,
+                or a newer link replaced it. Ask your administrator for a new link.
+            </div>
+            <script>
+                (function () {
+                    var token = window.location.hash.slice(1);
+                    if (token) {
+                        window.history.replaceState(null, "", window.location.pathname);
+                        document.getElementById("o_oauth_link_token").value = token;
+                        document.getElementById("o_oauth_link_form").submit();
+                    } else {
+                        document.getElementById("o_oauth_link_wait").classList.add("d-none");
+                        document.getElementById("o_oauth_link_invalid").classList.remove("d-none");
+                    }
+                })();
+            </script>
+        </t>
+    </template>
+</odoo>

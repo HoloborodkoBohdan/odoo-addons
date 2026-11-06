@@ -13,6 +13,7 @@ addon | version | summary | Apps Store
 [customer_tags_sale_order](customer_tags_sale_order/) | 19.0.1.0.1 | Show customer tags in sale order | [19.0](https://apps.odoo.com/apps/modules/19.0/customer_tags_sale_order/)
 [form_group_toggle](form_group_toggle/) | 19.0.1.0.1 | Collapse and expand groups in Odoo form views | [19.0](https://apps.odoo.com/apps/modules/19.0/form_group_toggle/)
 [mail_send_confirm](mail_send_confirm/) | 19.0.1.0.0 | Ask for confirmation before a chatter message is emailed to customers | [19.0](https://apps.odoo.com/apps/modules/19.0/mail_send_confirm/)
+[mail_server_oauth_link](mail_server_oauth_link/) | 19.0.1.0.0 | Send the Gmail / Outlook authorization link of a mail server to the mailbox owner instead of opening it yourself | [19.0](https://apps.odoo.com/apps/modules/19.0/mail_server_oauth_link/)
 
 `customer_tags_sale_order` was published as `partner_tags_sale_order` for
 Odoo 12.0–15.0: [12.0](https://apps.odoo.com/apps/modules/12.0/partner_tags_sale_order/) · [13.0](https://apps.odoo.com/apps/modules/13.0/partner_tags_sale_order/) · [14.0](https://apps.odoo.com/apps/modules/14.0/partner_tags_sale_order/) · [15.0](https://apps.odoo.com/apps/modules/15.0/partner_tags_sale_order/).

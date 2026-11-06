@@ -3,7 +3,7 @@
 {
     "name": "Customer Tags in Sale Order",
     "summary": "Show customer tags in sale order",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Tools",
     "website": "https://holoborodko.com.ua/?ref=customer_tags_sale_order",
     "author": "Bohdan Holoborodko",
@@ -11,8 +11,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "contacts",
-        "sale_management",
+        "sale",
     ],
     "data": [
         "views/sale_order.xml",

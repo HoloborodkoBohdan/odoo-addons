@@ -8,7 +8,7 @@ One branch per Odoo version: [16.0](https://github.com/HoloborodkoBohdan/odoo-ad
 
 addon | version | summary | Apps Store
 --- | --- | --- | ---
-[cron_category](cron_category/) | 20.0.1.0.0 | Add categories to scheduled actions for better organization | [20.0](https://apps.odoo.com/apps/modules/20.0/cron_category/)
+[cron_category](cron_category/) | 20.0.1.1.0 | Add categories to scheduled actions for better organization | [20.0](https://apps.odoo.com/apps/modules/20.0/cron_category/)
 
 ## Installation
 

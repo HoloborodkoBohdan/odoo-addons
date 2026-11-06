@@ -25,6 +25,7 @@ Assigning Categories to Cron Jobs
 Filtering by Category
 ~~~~~~~~~~~~~~~~~~~~~
 
-* In the Scheduled Actions list view, use the "Group By" filter
-* Select "Category" to group all cron jobs by their categories
-* This helps you quickly find and manage related scheduled actions
+* The Scheduled Actions list has a panel on the left with every category and
+  the number of scheduled actions in it; click a category to show only its
+  actions, or *All* to show them all again
+* To group instead, open the search options and pick *Group By > Category*

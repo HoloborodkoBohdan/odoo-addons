@@ -1,5 +1,6 @@
-20.0.1.0.0
+20.0.1.1.0
 ~~~~~~~~~~
 
-* Migrated to Odoo 20: access rights moved to ``ir.access`` (``security/ir.access.csv``).
+* Add a search panel with the categories and their counts to Scheduled Actions.
+* Move the *Category* group-by next to *Model* in the search options.
 

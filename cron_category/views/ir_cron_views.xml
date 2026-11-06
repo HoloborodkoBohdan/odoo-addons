@@ -27,8 +27,13 @@
         <field name="model">ir.cron</field>
         <field name="inherit_id" ref="base.ir_cron_view_search"/>
         <field name="arch" type="xml">
-            <search position="inside">
+            <filter name="groupby_model_id" position="after">
                 <filter name="group_category" string="Category" context="{'group_by': 'category_id'}"/>
+            </filter>
+            <search position="inside">
+                <searchpanel>
+                    <field name="category_id" icon="folder" icon_class="oi-filled" enable_counters="1" expand="1"/>
+                </searchpanel>
             </search>
         </field>
     </record>

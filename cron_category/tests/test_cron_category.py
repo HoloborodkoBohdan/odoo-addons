@@ -35,3 +35,16 @@ class TestCronCategory(TransactionCase):
         with mute_logger("odoo.sql_db"), self.assertRaises(IntegrityError):
             self.env["ir.cron.category"].create({"name": self.uncategorized.name})
             self.env.flush_all()
+
+    def test_search_panel(self):
+        arch = self.env["ir.cron"].get_view(view_type="search")["arch"]
+        self.assertIn("<searchpanel", arch)
+        self.assertIn('name="group_category"', arch)
+        reports = self.env["ir.cron.category"].create({"name": "Reports"})  # empty, still listed
+        result = self.env["ir.cron"].search_panel_select_range(
+            "category_id", enable_counters=True, expand=True
+        )
+        counts = {value["id"]: value["__count"] for value in result["values"]}
+        crons = self.env["ir.cron"].search([])
+        self.assertEqual(counts[self.uncategorized.id], len(crons.filtered(lambda c: c.category_id == self.uncategorized)))
+        self.assertEqual(counts[reports.id], 0)

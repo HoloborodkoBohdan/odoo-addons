@@ -3,7 +3,7 @@
 {
     "name": "Cron Category",
     "summary": "Add categories to scheduled actions for better organization",
-    "version": "19.0.1.0.1",
+    "version": "19.0.1.1.0",
     "category": "Tools",
     "website": "https://holoborodko.com.ua",
     "author": "Bohdan Holoborodko",

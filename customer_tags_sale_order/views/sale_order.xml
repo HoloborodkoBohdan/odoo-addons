@@ -6,11 +6,10 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="has_partner_tags" invisible="1"/>
-                <field name='partner_tags' 
+                <field name="partner_tags"
                     widget="many2many_tags"
                     options="{'color_field': 'color'}"
-                    attrs="{'invisible': [('has_partner_tags', '=', False)]}"/>
+                    attrs="{'invisible': [('partner_tags', '=', [])]}"/>
             </xpath>
         </field>
     </record>

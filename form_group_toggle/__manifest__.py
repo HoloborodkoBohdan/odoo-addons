@@ -3,7 +3,7 @@
 {
     "name": "Form Group Toggle",
     "summary": "Collapse and expand groups in Odoo form views",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Tools",
     "website": "https://holoborodko.com.ua",
     "author": "Bohdan Holoborodko",

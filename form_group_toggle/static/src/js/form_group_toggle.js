@@ -20,7 +20,7 @@ function patchGroupComponent(GroupComponent) {
 
             const groupEl = this.__owl__.bdom.el;
 
-            if (!this.props.slots?.title && !this.props.string) {
+            if (!this.props.slots?.title) {
                 return;
             }
 
@@ -30,15 +30,6 @@ function patchGroupComponent(GroupComponent) {
 
             if (!toggleHeader || !toggleIcon || !toggleContent) {
                 return;
-            }
-
-            const groupName = this.props.name || '';
-            const isInitiallyCollapsed = groupEl.closest('[data-group-collapsed]')?.dataset.groupCollapsed === groupName;
-
-            if (isInitiallyCollapsed) {
-                toggleContent.style.display = 'none';
-                toggleIcon.classList.remove('fa-chevron-down');
-                toggleIcon.classList.add('fa-chevron-right');
             }
 
             toggleHeader.addEventListener('click', (e) => {

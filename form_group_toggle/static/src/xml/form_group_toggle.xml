@@ -2,9 +2,6 @@
 <templates xml:space="preserve">
 
     <t t-name="web.Form.OuterGroup" t-inherit="web.Form.OuterGroup" t-inherit-mode="extension">
-        <xpath expr="//div[hasclass('o_group')]" position="attributes">
-            <attribute name="t-att-data-collapsed">props.collapsed</attribute>
-        </xpath>
         <!-- Replace title slot to add icon inline -->
         <xpath expr="//t[@t-slot='title']" position="replace">
             <div t-if="props.slots and props.slots.title" class="o_group_toggle_header">

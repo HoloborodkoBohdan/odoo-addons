@@ -40,8 +40,10 @@
 .o_group_toggle_content {
     display: contents;
     /* When hidden, display: none is set via JavaScript */
+}
 
-    // Inner group content - add padding to match header
+// Inner group content - add padding to match the header, only in groups that have one
+.o_group_toggle_header ~ .o_group_toggle_content {
     &.o_inner_group_content {
         // Apply padding to all cells to match header padding
         .o_cell {

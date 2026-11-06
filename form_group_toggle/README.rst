@@ -27,7 +27,7 @@ This module adds collapse and expand functionality to groups in Odoo form views.
 Features:
 
 * Click anywhere on group titles to collapse/expand content
-* Smooth animations and hover effects
+* Hover highlight on group titles
 * Works on all groups with labels in form views
 * Compatible with Odoo 19
 
@@ -74,6 +74,16 @@ Example
 
 The "Contact Information" group will display a chevron icon next to the title.
 Click anywhere on the title area to collapse or expand the group content.
+
+Changelog
+=========
+
+19.0.1.0.1
+~~~~~~~~~~
+
+* Keep the extra cell padding to groups that have a title.
+* Remove code for an initially collapsed state that could never apply.
+* Fix the description: there are no animations.
 
 Bug Tracker
 ===========

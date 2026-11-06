@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Holoborodko Bohdan
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.mail_send_confirm</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="mail.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="restrict_template_rendering_setting" position="after">
+                <setting id="mail_send_confirm_setting" string="Confirm Emailed Messages" company_dependent="1"
+                         help="Before a message from the chatter is emailed, show who receives it and ask to confirm.">
+                    <field name="mail_send_confirm_mode" widget="radio" class="o_light_label"/>
+                </setting>
+            </setting>
+        </field>
+    </record>
+</odoo>
